@@ -1,0 +1,51 @@
+{
+  "data": {
+    "projects": [
+      {
+        "id": "sdfdsfsdfi234567663212ojjklnwefd",
+        "name": "P1",
+        "expenseList": [
+          { "id": "sdfsdojk12lesdlfknm", "name": "E1", "amountRemaining": 50, "paidOff": false },
+          { "id": "sdfsdo234242424jk12lesdlfknm", "name": "E2", "amountRemaining": 2130123, "paidOff": false },
+          { "id": "sdfsdojk12lesdlfk764532331nm", "name": "E3", "amountRemaining": 2130123, "paidOff": false },
+          { "id": "sdfsdojk12lesd`14325675lfknm", "name": "E4", "amountRemaining": 2130123, "paidOff": false }
+        ]
+      },
+      {
+        "id": "sdfdsfsdfiojjkl123eiwjdnskcxnwefd",
+        "name": "P2",
+        "expenseList": [
+          { "id": "sdfsdojk12lesdlfknm", "name": "E1", "amountRemaining": 50, "paidOff": false },
+          { "id": "sdfsdo234242424jk12lesdlfknm", "name": "E2", "amountRemaining": 2130123, "paidOff": false },
+          { "id": "sdfsdojk12lesdlfk764532331nm", "name": "E3", "amountRemaining": 2130123, "paidOff": false },
+          { "id": "sdfsdojk12lesd`14325675lfknm", "name": "E4", "amountRemaining": 2130123, "paidOff": false }
+        ]
+      },
+      {
+        "id": "sdfdsfsdfiojjklnwe89234239sdf89fd",
+        "name": "P3",
+        "expenseList": [
+          { "id": "sdfsdojk12lesdlfknm", "name": "E1", "amountRemaining": 50, "paidOff": false },
+          { "id": "sdfsdo234242424jk12lesdlfknm", "name": "E2", "amountRemaining": 2130123, "paidOff": false },
+          { "id": "sdfsdojk12lesdlfk764532331nm", "name": "E3", "amountRemaining": 2130123, "paidOff": false },
+          { "id": "sdfsdojk12lesd`14325675lfknm", "name": "E4", "amountRemaining": 2130123, "paidOff": false }
+        ]
+      },
+      {
+        "id": "sdfdsfsdfi23498208341093ojjklnwefd",
+        "name": "P4",
+        "expenseList": [
+          { "id": "sdfsdojk12lesdlfknm", "name": "E1", "amountRemaining": 50, "paidOff": false },
+          { "id": "sdfsdo234242424jk12lesdlfknm", "name": "E2", "amountRemaining": 2130123, "paidOff": false },
+          { "id": "sdfsdojk12lesdlfk764532331nm", "name": "E3", "amountRemaining": 2130123, "paidOff": false },
+          { "id": "sdfsdojk12lesd`14325675lfknm", "name": "E4", "amountRemaining": 2130123, "paidOff": false }
+        ]
+      }
+    ]
+  },
+  "body": {
+    "method": "DELETE",
+    "projectID": "sdfdsfsdfiojjkl123eiwjdnskcxnwefd",
+    "expenseID": "sdfsdojk12lesd`14325675lfknm"
+  }
+}
