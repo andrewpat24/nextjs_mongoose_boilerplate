@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const ProjectSchema = new mongoose.Schema({
   id: String,
@@ -6,4 +6,4 @@ const ProjectSchema = new mongoose.Schema({
   expenseList: Array,
 });
 
-module.exports = mongoose.models.Project || mongoose.model('Project', ProjectSchema);
+export default module.exports = mongoose.models.Project || mongoose.model("Project", ProjectSchema);

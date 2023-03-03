@@ -1,22 +1,14 @@
-import Head from 'next/head';
-import { Inter } from '@next/font/google';
-import styles from '../styles/Home.module.css';
-import { useEffect } from 'react';
-import axios from 'axios';
-import { HTTPMethod } from '../types/api';
+import Head from "next/head";
+import { Inter } from "@next/font/google";
+import styles from "../styles/Home.module.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { HTTPMethod } from "../types/api";
+import Search from "../components/Search";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  useEffect(() => {
-    (async () => {
-      const response = await axios.post('/api/project', {
-        method: HTTPMethod.GET,
-      });
-      console.log(JSON.stringify(response.data));
-    })();
-  }, []);
-
   return (
     <>
       <Head>
@@ -26,27 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <button
-          onClick={async (e) => {
-            const project = {
-              id: 'sdfdsfsdfi234567663212ojjklnwefd',
-              name: 'P1',
-              expenseList: [
-                { id: 'sdfsdojk12lesdlfknm', name: 'E1', amountRemaining: 50, paidOff: false },
-                { id: 'sdfsdo234242424jk12lesdlfknm', name: 'E2', amountRemaining: 2130123, paidOff: false },
-                { id: 'sdfsdojk12lesdlfk764532331nm', name: 'E3', amountRemaining: 2130123, paidOff: false },
-                { id: 'sdfsdojk12lesd14325675lfknm', name: 'E4', amountRemaining: 2130123, paidOff: false },
-              ],
-            };
-
-            await axios.post('/api/project', {
-              method: HTTPMethod.POST,
-              project,
-            });
-          }}
-        >
-          <h1>Create</h1>
-        </button>
+        <Search />
       </main>
     </>
   );
