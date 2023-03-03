@@ -35,7 +35,7 @@ const postLogic = async (searchString: string, limit: number) => {
   const parsedTSV = parsedTSVResult.data;
 
   // Split search string up into separate queries
-  const searchWords = searchString.split(" ");
+  const searchWords = searchString.toLocaleLowerCase().split(" ");
 
   // remove empty 'words'
   const parsedSearchWords = searchWords.filter((searchWord) => {
