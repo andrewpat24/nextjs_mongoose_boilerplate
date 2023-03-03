@@ -25,7 +25,7 @@ export default function Search() {
         });
 
         console.log(JSON.stringify(response), response.data.data.length, { cond: response.data.data.length > 0 });
-        if (response.data.data.length > 0) {
+        if (response.data.data && response.data.data.length > 0) {
           console.log(response.data.data);
           setSearchResults(response.data.data);
         } else {
