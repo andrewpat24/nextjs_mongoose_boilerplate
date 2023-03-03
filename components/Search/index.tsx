@@ -24,9 +24,8 @@ export default function Search() {
           limit: 100,
         });
 
-        console.log(JSON.stringify(response), response.data.data.length, { cond: response.data.data.length > 0 });
+        console.log(JSON.stringify(response));
         if (response.data.data && response.data.data.length > 0) {
-          console.log(response.data.data);
           setSearchResults(response.data.data);
         } else {
           setSearchResults([]);
