@@ -1,8 +1,8 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { HTTPMethod } from '../../../types/api';
-import { ProjectItem, ExpenseItem } from '../../../types/database';
-import dbConnect from '../../../lib/database/dbConnect';
-import Project from '../../../lib/database/models/Project';
+import { NextApiRequest, NextApiResponse } from "next";
+import { HTTPMethod } from "../../../types/api";
+import { ProjectItem, ExpenseItem } from "../../../types/database";
+import dbConnect from "../../../lib/database/dbConnect";
+import Project from "../../../lib/database/models/Project";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method, project, projectID } = req.body;

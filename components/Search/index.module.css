@@ -1,0 +1,22 @@
+.searchWrapper {
+  width: 100%;
+}
+
+.searchInputContainer {
+  width: 100%;
+}
+
+.searchInput {
+}
+
+.searchAutocompleteContainer {
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.searchAutocomplete {
+  width: 100%;
+  background-color: rgb(65 65 65 / 65%);
+
+  padding: 1rem;
+}
