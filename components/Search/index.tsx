@@ -10,24 +10,31 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Search() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [searchResults, setSearchResults] = useState<string[]>([]);
+  const [isLoadingResults, setIsLoadingResults] = useState<boolean>(false);
 
   useEffect(() => {
     (async () => {
-      console.log({ searchQuery });
+      setIsLoadingResults(true);
+      try {
+        console.log({ searchQuery });
 
-      const response = await axios.post("/api/auto-complete", {
-        method: HTTPMethod.POST,
-        searchString: searchQuery,
-        limit: 100,
-      });
+        const response = await axios.post("/api/auto-complete", {
+          method: HTTPMethod.POST,
+          searchString: searchQuery,
+          limit: 100,
+        });
 
-      console.log(JSON.stringify(response), response.data.data.length, { cond: response.data.data.length > 0 });
-      if (response.data.data.length > 0) {
-        console.log(response.data.data);
-        setSearchResults(response.data.data);
-      } else {
-        setSearchResults([]);
+        console.log(JSON.stringify(response), response.data.data.length, { cond: response.data.data.length > 0 });
+        if (response.data.data.length > 0) {
+          console.log(response.data.data);
+          setSearchResults(response.data.data);
+        } else {
+          setSearchResults([]);
+        }
+      } catch (e) {
+        console.log("an error occurred", e);
       }
+      setIsLoadingResults(false);
     })();
   }, [searchQuery]);
 
@@ -40,16 +47,19 @@ export default function Search() {
           onChange={(e) => {
             const value = e.target.value;
             setSearchQuery(value);
-          }}></input>
+          }}
+        />
       </div>
       <div className={styles.searchAutocompleteContainer}>
-        {searchResults.length > 0 && (
+        {!isLoadingResults && searchResults.length > 0 ? (
           <div className={styles.searchAutocomplete}>
             {searchResults.map((result) => {
               console.log({ result });
               return <div>{result.length > 80 ? `${result.substring(0, 80)}...` : result}</div>;
             })}
           </div>
+        ) : (
+          ""
         )}
       </div>
     </div>
